@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import {views as Todos} from './todoList/todos/';
-import {views as Filter} from './todoList/filters/'
+import {TodoApp} from './todoList/todos/index';
+import {FilterApp} from './todoList/filters/index';
 
 class App extends Component {
   render() {
     return (
         <div>
-          <Todos/>
-          <Filter/>
+          <TodoApp/>
+          <FilterApp/>
         </div>
     );
   }

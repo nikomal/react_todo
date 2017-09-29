@@ -1,7 +1,6 @@
 import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from "./actionTypes";
-import {toggleTodo} from "./actions";
 
-export default (state = [], action) => {
+export const reducers = (state = [], action) => {
     switch (action.type) {
         case ADD_TODO: {
             return [
@@ -23,11 +22,11 @@ export default (state = [], action) => {
             })
         }
         case REMOVE_TODO: {
-            return state.filter((todoItem) => {
-                if (todoItem.id === action.id) return todoItem;
-            })
+            return state.filter((todoItem) => (
+                todoItem.id !== action.id
+            ));
         }
         default :
             return state;
     }
-}
+};

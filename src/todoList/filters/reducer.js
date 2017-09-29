@@ -1,8 +1,8 @@
 import {SET_FILTER} from "./actionTypes";
-import {FilterTypes} from "./contents";
+import * as FilterTypes from "./filterTypes";
 
 
-export default (state=FilterTypes.ALL, action) =>{
+export const reducers =  (state=FilterTypes.ALL, action) =>{
     switch (action.type) {
         case SET_FILTER:{
             return action.filter
@@ -11,4 +11,4 @@ export default (state=FilterTypes.ALL, action) =>{
             return state
         }
     }
-}
+};
